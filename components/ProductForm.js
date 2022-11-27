@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 export function ProductForm() {
   const router = useRouter();
@@ -13,14 +14,18 @@ export function ProductForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (router.query.id) {
-      const res = await axios.put("/api/products/" + router.query.id, product);
-      console.log(res);
-    } else {
-      const res = await axios.post("/api/products", product);
-      console.log(res);
+    try {
+      if (router.query.id) {
+        await axios.put("/api/products/" + router.query.id, product);
+        toast.success("Product updated successfully");
+      } else {
+        await axios.post("/api/products", product);
+        toast.success("Product created successfully");
+      }
+      router.push("/");
+    } catch (error) {
+      toast.error(error.response.data.message);
     }
-    router.push("/");
   };
 
   const handleChange = ({ target: { name, value } }) => {
