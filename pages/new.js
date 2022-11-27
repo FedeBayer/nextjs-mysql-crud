@@ -1,7 +1,13 @@
 import React from "react";
+import { Layout } from "../components/Layout";
+import { ProductForm } from "../components/ProductForm";
 
 function NewPage() {
-  return <div>Add a product</div>;
+  return (
+    <Layout>
+      <ProductForm />
+    </Layout>
+  );
 }
 
 export default NewPage;
