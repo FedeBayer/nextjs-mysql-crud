@@ -49,33 +49,51 @@ export function ProductForm() {
         onSubmit={handleSubmit}
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
       >
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          name="name"
-          onChange={handleChange}
-          className="shadow border rounded py-2 px-3 text-gray-700"
-          value={product.name}
-        />
-
-        <label htmlFor="price">Price:</label>
-        <input
-          type="text"
-          name="price"
-          onChange={handleChange}
-          className="shadow border rounded py-2 px-3 text-gray-700"
-          value={product.price}
-        />
-
-        <label htmlFor="description">Description:</label>
-        <textarea
-          name="description"
-          rows="2"
-          onChange={handleChange}
-          className="shadow border rounded py-2 px-3 text-gray-700"
-          value={product.description}
-        ></textarea>
-
+        <div className="mb-4">
+          <label
+            htmlFor="name"
+            className="block test-gray-700 text-sm font-bold mb2"
+          >
+            Name:
+          </label>
+          <input
+            type="text"
+            name="name"
+            onChange={handleChange}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            value={product.name}
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="price"
+            className="block test-gray-700 text-sm font-bold mb2"
+          >
+            Price:
+          </label>
+          <input
+            type="text"
+            name="price"
+            onChange={handleChange}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            value={product.price}
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="description"
+            className="block test-gray-700 text-sm font-bold mb2"
+          >
+            Description:
+          </label>
+          <textarea
+            name="description"
+            rows="2"
+            onChange={handleChange}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            value={product.description}
+          ></textarea>
+        </div>
         <button
           type="submit"
           className="bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded focus:outline-none focus:shadow-outline font-bold text-white"

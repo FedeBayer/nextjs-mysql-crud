@@ -16,11 +16,20 @@ function ProductPage({ product }) {
   };
   return (
     <Layout>
-      <h1>{product.name}</h1>
-      <p>{product.description}</p>
-      <p>{product.price}</p>
+      <h1>
+        <span className="block test-gray-700 font-bold mb2">Name:</span>
+        {product.name}
+      </h1>
+      <p>
+        <span className="block test-gray-700 font-bold mb2">Description:</span>
+        {product.description}
+      </p>
+      <p>
+        <span className="block test-gray-700 font-bold mb2">Price:</span>
+        {product.price}
+      </p>
       <button
-        className="bg-red-500 hover:bg-red-700 text-white px-3 py-2 rounded"
+        className="bg-red-500 hover:bg-red-700 text-white px-3 py-2 rounded mt-2"
         onClick={() => handleDelete(product.id)}
       >
         delete
